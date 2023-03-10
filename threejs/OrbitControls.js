@@ -36,7 +36,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 	// How far you can orbit vertically, upper and lower limits.
 	// Range is 0 to Math.PI radians.
 	this.minPolarAngle = 0; // radians
-	this.maxPolarAngle = Math.PI; // radians
+	this.maxPolarAngle = Math.PI/2; // radians
 
 	// How far you can orbit horizontally, upper and lower limits.
 	// If set, must be a sub-interval of the interval [ - Math.PI, Math.PI ].
@@ -51,23 +51,23 @@ THREE.OrbitControls = function ( object, domElement ) {
 	// This option actually enables dollying in and out; left as "zoom" for backwards compatibility.
 	// Set to false to disable zooming
 	this.enableZoom = true;
-	this.zoomSpeed = 1.0;
+	this.zoomSpeed = 0.3;
 
 	// Set to false to disable rotating
 	this.enableRotate = true;
-	this.rotateSpeed = 0.5;					// (1.0)
+	this.rotateSpeed = 0.1;					// (1.0)
 	this.keyRotateAngle = Math.PI / 360;	// radians. per one key event. added @minorua
 
 	// Set to false to disable panning
 	this.enablePan = true;
-	this.panSpeed = 1.0;
+	this.panSpeed = 0.3;
 	this.screenSpacePanning = false; // if true, pan in screen-space
-	this.keyPanSpeed = 4.0;			// (7.0) pixels moved per arrow key push
+	this.keyPanSpeed = 1.0;			// (7.0) pixels moved per arrow key push
 
 	// Set to true to automatically rotate around the target
 	// If auto-rotate is enabled, you must call controls.update() in your animation loop
 	this.autoRotate = false;
-	this.autoRotateSpeed = 2.0; // 30 seconds per round when fps is 60
+	this.autoRotateSpeed = 1.0; // 30 seconds per round when fps is 60
 
 	// Set to false to disable use of the keys
 	this.enableKeys = true;
